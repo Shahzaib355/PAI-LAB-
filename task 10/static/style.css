@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+header {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    padding: 40px 30px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+.main-content {
+    padding: 40px 30px;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.category-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.category-section label {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+select {
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    background: white;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+select:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+    background: #2c3e50;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #34495e;
+    transform: translateY(-2px);
+}
+
+.search-section {
+    display: flex;
+    gap: 10px;
+}
+
+#searchInput {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+}
+
+#searchInput:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.hadith-display {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 30px;
+    min-height: 250px;
+    margin-bottom: 20px;
+}
+
+.welcome-message {
+    text-align: center;
+    color: #666;
+    padding: 50px 20px;
+}
+
+.welcome-message p {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+.hadith-card {
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hadith-text {
+    font-size: 1.3em;
+    line-height: 1.8;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-style: italic;
+    text-align: justify;
+}
+
+.hadith-details {
+    border-top: 2px solid #ddd;
+    padding-top: 20px;
+}
+
+.detail-item {
+    margin: 10px 0;
+    color: #555;
+}
+
+.detail-item strong {
+    color: #2c3e50;
+    display: inline-block;
+    min-width: 100px;
+}
+
+.category-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+.search-results {
+    display: none;
+}
+
+.search-results.active {
+    display: block;
+}
+
+.result-item {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-left: 4px solid #667eea;
+}
+
+.result-item .hadith-text {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+.no-results {
+    text-align: center;
+    padding: 30px;
+    color: #666;
+    font-size: 1.1em;
+}
+
+footer {
+    background: #f8f9fa;
+    padding: 30px;
+    border-top: 2px solid #ddd;
+}
+
+.verification-info h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.verification-info p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.verification-info ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.verification-info li {
+    padding: 8px 0;
+    color: #555;
+    border-bottom: 1px solid #ddd;
+}
+
+.verification-info li:last-child {
+    border-bottom: none;
+}
+
+.note {
+    background: #fff3cd;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #ffc107;
+    margin-top: 15px;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+    
+    .hadith-text {
+        font-size: 1.1em;
+    }
+    
+    .search-section {
+        flex-direction: column;
+    }
+}
