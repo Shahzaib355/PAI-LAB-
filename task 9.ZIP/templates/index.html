@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NLP Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Epilogue:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <div class="page">
+
+    <header>
+      <div class="header-left">
+        <h1 class="brand">NLP<span class="brand-dot">.</span></h1>
+        <p class="brand-sub">Natural Language Processing — Lab 9</p>
+      </div>
+      <div class="header-tag">PAI</div>
+    </header>
+
+    <div class="main-grid">
+
+      <div class="left-col">
+
+        <label class="input-label">your text</label>
+        <textarea
+          id="textInput"
+          class="text-area"
+          placeholder="Type or paste any sentence here..."
+          rows="6"
+        >The quick brown foxes are running and jumping over the lazy dogs in the beautiful garden.</textarea>
+
+        <div class="task-grid">
+
+          <button class="task-btn active" data-task="tokenize" onclick="selectTask(this)">
+            <span class="task-icon">✂️</span>
+            <span class="task-name">Tokenization</span>
+            <span class="task-desc">Split into words & sentences</span>
+          </button>
+
+          <button class="task-btn" data-task="stopwords" onclick="selectTask(this)">
+            <span class="task-icon">🚫</span>
+            <span class="task-name">Stopwords</span>
+            <span class="task-desc">Remove common words</span>
+          </button>
+
+          <button class="task-btn" data-task="stemming" onclick="selectTask(this)">
+            <span class="task-icon">🌱</span>
+            <span class="task-name">Stemming</span>
+            <span class="task-desc">Reduce to root form</span>
+          </button>
+
+          <button class="task-btn" data-task="lemmatization" onclick="selectTask(this)">
+            <span class="task-icon">📖</span>
+            <span class="task-name">Lemmatization</span>
+            <span class="task-desc">Find base dictionary word</span>
+          </button>
+
+          <button class="task-btn" data-task="sentiment" onclick="selectTask(this)">
+            <span class="task-icon">💬</span>
+            <span class="task-name">Sentiment</span>
+            <span class="task-desc">Detect emotion in text</span>
+          </button>
+
+        </div>
+
+        <button class="run-btn" onclick="runTask()">Run Analysis →</button>
+
+      </div>
+
+      <div class="right-col">
+
+        <div class="result-header">
+          <span class="result-label">output</span>
+          <span class="result-task-name" id="resultTaskName">Tokenization</span>
+        </div>
+
+        <div class="result-box" id="resultBox">
+          <p class="result-idle">Select a task and click Run Analysis to see results here.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
